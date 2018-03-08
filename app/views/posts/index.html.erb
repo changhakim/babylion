@@ -1,0 +1,19 @@
+<h1>All Post</h1>
+<% @posts.each do |post| %>
+	<table class="table">
+		<thead>
+		    <tr>
+		      <th scope="col">#</th>
+		      <th scope="col">title</th>
+		      <th scope="col">user</th>
+		    </tr>
+		 </thead>
+		 <tbody>
+		    <tr>
+		      <th scope="row"><%= post.id %></th>
+		      <td><a href="/posts/show/<%= post.id %>"><%= post.title %></td>
+		      <td><%= post.email %></td>
+		    </tr>
+		</tbody>
+	</table>
+<% end %>	

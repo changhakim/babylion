@@ -1,0 +1,11 @@
+<h1>Post edit</h1>
+<!-- method put에서 post로 변경 -->
+<form action="/posts/update/<%= @post.id %>" method="post">
+  <!-- csrf token 추가 -->
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="hidden" name="input_user" value="<%= current_user.id %>">
+  <p>title : <input type="text" name="input_title" value="<%= @post.title %>"></p>
+  <div>content : <textarea name="input_content" cols="30" rows="10"><%= @post.content %></textarea></div>
+  <input type="submit" value="edit">
+</form>
+
